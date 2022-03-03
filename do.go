@@ -12,7 +12,7 @@ import (
 	"gorm.io/gorm/clause"
 	"gorm.io/gorm/schema"
 
-	"gorm.io/gen/field"
+	"github.com/insomniasary/gen/field"
 )
 
 var (

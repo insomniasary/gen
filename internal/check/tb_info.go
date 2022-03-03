@@ -7,7 +7,7 @@ import (
 
 	"gorm.io/gorm"
 
-	"gorm.io/gen/internal/model"
+	"github.com/insomniasary/gen/internal/model"
 )
 
 const (

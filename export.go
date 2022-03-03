@@ -1,5 +1,5 @@
 package gen
 
-import "gorm.io/gen/internal/model"
+import "github.com/insomniasary/gen/internal/model"
 
 type FieldOpt model.FieldOpt

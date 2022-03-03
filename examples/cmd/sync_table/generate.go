@@ -3,9 +3,9 @@ package main
 import (
 	"strings"
 
-	"gorm.io/gen"
-	"gorm.io/gen/examples/conf"
-	"gorm.io/gen/examples/dal"
+	"github.com/insomniasary/gen"
+	"github.com/insomniasary/gen/examples/conf"
+	"github.com/insomniasary/gen/examples/dal"
 )
 
 func init() {

@@ -19,11 +19,11 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 
-	"gorm.io/gen/internal/check"
-	"gorm.io/gen/internal/model"
-	"gorm.io/gen/internal/parser"
-	tmpl "gorm.io/gen/internal/template"
-	"gorm.io/gen/internal/utils/pools"
+	"github.com/insomniasary/gen/internal/check"
+	"github.com/insomniasary/gen/internal/model"
+	"github.com/insomniasary/gen/internal/parser"
+	tmpl "github.com/insomniasary/gen/internal/template"
+	"github.com/insomniasary/gen/internal/utils/pools"
 )
 
 // T generic type

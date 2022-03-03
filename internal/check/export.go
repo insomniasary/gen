@@ -7,8 +7,8 @@ import (
 
 	"gorm.io/gorm"
 
-	"gorm.io/gen/internal/model"
-	"gorm.io/gen/internal/parser"
+	"github.com/insomniasary/gen/internal/model"
+	"github.com/insomniasary/gen/internal/parser"
 )
 
 // CheckStructs check the legitimacy of structures

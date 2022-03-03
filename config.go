@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gorm.io/gen/internal/check"
-	"gorm.io/gen/internal/model"
+	"github.com/insomniasary/gen/internal/check"
+	"github.com/insomniasary/gen/internal/model"
 	"gorm.io/gorm"
 	"gorm.io/gorm/utils/tests"
 )

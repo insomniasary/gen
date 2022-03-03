@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"gorm.io/gen/internal/model"
+	"github.com/insomniasary/gen/internal/model"
 )
 
 // Clause a symbol of clause, it can be sql condition clause, if clause, where clause, set clause and else clause

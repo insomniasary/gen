@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"gorm.io/datatypes"
-	"gorm.io/gen/field"
+	"github.com/insomniasary/gen/field"
 	"gorm.io/gorm/clause"
 )
 

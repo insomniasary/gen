@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"gorm.io/gen/internal/model"
+	"github.com/insomniasary/gen/internal/model"
 )
 
 type ForRange struct {

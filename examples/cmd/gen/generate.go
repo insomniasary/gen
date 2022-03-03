@@ -8,13 +8,15 @@ import (
 
 func init() {
 	dal.DB = dal.ConnectDB(conf.MySQLDSN)
-
-	prepare(dal.DB) // prepare table for generate
 }
 
 func main() {
 	g := gen.NewGenerator(gen.Config{
-		OutPath: "../../dal/query",
+		OutPath: "/Users/linyanteng/Code/gen/examples/cmd/gen/query",
+		ModelPkgPath:"/Users/linyanteng/Code/gen/examples/cmd/gen/model",
+		FieldNullable: true,
+		FieldWithIndexTag:true,
+		FieldWithTypeTag:  true,
 	})
 
 	g.UseDB(dal.DB)

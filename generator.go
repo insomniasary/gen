@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/insomniasary/gen/internal/utils"
 	"io"
 	"io/ioutil"
 	"log"
@@ -139,7 +140,6 @@ func (g *Generator) GenerateModelAs(tableName string, modelName string, fieldOpt
 	}
 	g.modelData[s.StructName] = s
 
-	g.successInfo(fmt.Sprintf("got %d columns from table <%s>", len(s.Fields), s.TableName))
 	return s
 }
 
@@ -307,7 +307,7 @@ func (g *Generator) generateQueryFile() (err error) {
 	if err != nil {
 		return err
 	}
-	g.successInfo("generate query file: " + g.OutFile)
+
 
 	// generate query unit test file
 	if g.WithUnitTest {
@@ -382,8 +382,7 @@ func (g *Generator) generateSingleQueryFile(data *genInfo) (err error) {
 		return err
 	}
 
-	defer g.successInfo(fmt.Sprintf("generate query file: %s/%s.gen.go", g.OutPath, data.FileName))
-	return g.output(fmt.Sprintf("%s/%s.gen.go", g.OutPath, data.FileName), buf.Bytes())
+	return g.output(fmt.Sprintf("%s/%s.go", g.OutPath, data.FileName), buf.Bytes())
 }
 
 // generateQueryUnitTestFile generate unit test file for query
@@ -448,14 +447,14 @@ func (g *Generator) generateModelFile() error {
 			if err != nil {
 				errChan <- err
 			}
-
-			modelFile := modelOutPath + data.FileName + ".gen.go"
+			data.FileName = utils.Case2Camel(data.FileName)
+			modelFile := modelOutPath + data.FileName + ".go"
 			err = g.output(modelFile, buf.Bytes())
 			if err != nil {
 				errChan <- err
 			}
 
-			g.successInfo(fmt.Sprintf("generate model file(table <%s> -> {%s.%s}): %s", data.TableName, data.StructInfo.Package, data.StructInfo.Type, modelFile))
+			//g.successInfo(fmt.Sprintf("generate model file(table <%s> -> {%s.%s}): %s", data.TableName, data.StructInfo.Package, data.StructInfo.Type, modelFile))
 		}(data)
 	}
 	select {
